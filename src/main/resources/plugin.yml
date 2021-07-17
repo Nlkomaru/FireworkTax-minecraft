@@ -1,0 +1,4 @@
+name: FireworkTax
+version: ${project.version}
+main: com.github.nlkomaru.fireworktax.FireworkTax
+api-version: 1.17
