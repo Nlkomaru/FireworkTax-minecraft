@@ -1,21 +1,27 @@
 package com.github.nlkomaru.fireworktax;
 
 
+import com.github.nlkomaru.fireworktax.files.Customconfig;
 import com.github.nlkomaru.fireworktax.tax.BoostCheck;
 import org.bukkit.plugin.java.JavaPlugin;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.plugin.RegisteredServiceProvider;
 
 
-
 public final class FireworkTax extends JavaPlugin {
 
     private static Economy econ = null;
+    private static int Firework = 0;
 
     @Override
     public void onEnable() {
         // Plugin startup logic
-
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
+        Customconfig.setup();
+        Customconfig.get().options().copyDefaults(true);
+        Customconfig.save();
+        Firework = Customconfig.get().getInt("Firework",10);
 
         if (!setupEconomy()) {
             System.out.println("No economy plugin found. Disabling Vault");
@@ -39,10 +45,11 @@ public final class FireworkTax extends JavaPlugin {
     }
 
 
-    public static Economy getEconomy()
-    {
-
+    public static Economy getEconomy() {
         return econ;
+    }
+    public static int getFirework(){
+        return Firework;
     }
 
 }
