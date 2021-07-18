@@ -32,7 +32,7 @@ public class BoostCheck implements Listener {
                         p.sendMessage(ChatColor.YELLOW + "お金がないのでブースト飛行できません");
                     } else {
                         EconomyResponse response = eco.withdrawPlayer(p, f);
-                        p.sendMessage(ChatColor.YELLOW + String.format("ブーストにより%d円惹かれました",f));
+                        //p.sendMessage(ChatColor.YELLOW + String.format("ブーストにより%d円引かれました",f));
                     }
                 }
             }
