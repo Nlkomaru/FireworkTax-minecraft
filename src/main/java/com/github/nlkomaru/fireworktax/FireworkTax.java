@@ -11,7 +11,8 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 public final class FireworkTax extends JavaPlugin {
 
     private static Economy econ = null;
-    private static int Firework ;
+
+
 
     @Override
     public void onEnable() {
@@ -21,7 +22,8 @@ public final class FireworkTax extends JavaPlugin {
         Customconfig.setup();
         Customconfig.get().options().copyDefaults(true);
         Customconfig.save();
-        Firework = Customconfig.get().getInt("Firework");
+
+
 
         if (!setupEconomy()) {
             System.out.println("No economy plugin found. Disabling Vault");
@@ -48,8 +50,6 @@ public final class FireworkTax extends JavaPlugin {
     public static Economy getEconomy() {
         return econ;
     }
-    public static int getFirework(){
-        return Firework;
-    }
+
 
 }

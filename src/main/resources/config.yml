@@ -1,1 +1,2 @@
-Firework: 10
+Firework: 10 #Amount to be pulled during fireworks boost
+MessageCounter: 0 #How many boosts to display. If zero, do not display.

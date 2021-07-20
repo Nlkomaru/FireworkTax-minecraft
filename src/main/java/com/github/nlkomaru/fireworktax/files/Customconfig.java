@@ -7,8 +7,11 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 public class Customconfig {
+
     private static File file;
     private static FileConfiguration customFile;
+    private static double Firework ;
+    private static double Count;
 
 
     public static void setup() {
@@ -35,5 +38,14 @@ public class Customconfig {
         } catch (IOException e) {
             System.out.println("Couldn't save file");
         }
+    }
+
+    public static double getCount(){
+        Count = Customconfig.get().getDouble("MessageCounter");
+        return Count;
+    }
+    public static double getFirework(){
+        Firework = get().getDouble("Firework");
+        return Firework;
     }
 }
