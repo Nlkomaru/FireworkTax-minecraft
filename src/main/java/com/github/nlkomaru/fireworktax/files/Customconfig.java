@@ -10,8 +10,8 @@ public class Customconfig {
 
     private static File file;
     private static FileConfiguration customFile;
-    private static double Firework ;
-    private static double Count;
+    private static float Firework ;
+    private static int Count;
 
 
     public static void setup() {
@@ -40,12 +40,12 @@ public class Customconfig {
         }
     }
 
-    public static double getCount(){
-        Count = Customconfig.get().getDouble("MessageCounter");
+    public static int getCount(){
+        Count = Customconfig.get().getInt("MessageCounter");
         return Count;
     }
-    public static double getFirework(){
-        Firework = get().getDouble("Firework");
+    public static float getFirework(){
+        Firework = (float) get().getDouble("Firework");
         return Firework;
     }
 }
