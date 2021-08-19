@@ -13,7 +13,6 @@ public final class FireworkTax extends JavaPlugin {
     private static Economy econ = null;
 
 
-
     @Override
     public void onEnable() {
         // Plugin startup logic
@@ -24,13 +23,12 @@ public final class FireworkTax extends JavaPlugin {
         Customconfig.save();
 
 
-
         if (!setupEconomy()) {
             System.out.println("No economy plugin found. Disabling Vault");
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
-        getServer().getPluginManager().registerEvents(new BoostCheck(),this);
+        getServer().getPluginManager().registerEvents(new BoostCheck(), this);
     }
 
     private boolean setupEconomy() {
