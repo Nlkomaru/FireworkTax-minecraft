@@ -6,11 +6,12 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
+
 public class Customconfig {
 
     private static File file;
     private static FileConfiguration customFile;
-    private static float Firework ;
+    private static float Firework;
     private static int Count;
 
 
@@ -40,11 +41,12 @@ public class Customconfig {
         }
     }
 
-    public static int getCount(){
+    public static int getCount() {
         Count = Customconfig.get().getInt("MessageCounter");
         return Count;
     }
-    public static float getFirework(){
+
+    public static float getFirework() {
         Firework = (float) get().getDouble("Firework");
         return Firework;
     }

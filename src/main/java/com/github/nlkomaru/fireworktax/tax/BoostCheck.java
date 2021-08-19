@@ -34,14 +34,15 @@ public class BoostCheck implements Listener {
         UUID uuid = e.getPlayer().getUniqueId();
         float f = Customconfig.getFirework();
         int c = Customconfig.getCount();
+
         if(total.get(uuid) == null){
-            d.put(e.getPlayer().getUniqueId(), 0);
-            total.put(e.getPlayer().getUniqueId(), (float) 0);
+            d.put(uuid, 0);
+            total.put(uuid, (float) 0);
         }
 
         if (p.isGliding()) {
             if (p.getInventory().getItemInMainHand().getType().equals(Material.FIREWORK_ROCKET) || p.getInventory().getItemInOffHand().getType().equals(Material.FIREWORK_ROCKET)) {
-                if (e.getAction().equals(Action.RIGHT_CLICK_AIR) || e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
+                if (e.getAction().equals(Action.RIGHT_CLICK_AIR)) {
                     if (eco.getBalance(p) < f) {
                         e.setCancelled(true);
                         p.sendMessage(ChatColor.YELLOW + "お金がないのでブースト飛行できません");
