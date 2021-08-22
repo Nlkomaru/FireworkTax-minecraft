@@ -1,8 +1,8 @@
-package com.github.nlkomaru.fireworktax;
+package dev.nikomaru.fireworktax;
 
 
-import com.github.nlkomaru.fireworktax.files.Customconfig;
-import com.github.nlkomaru.fireworktax.tax.BoostCheck;
+import dev.nikomaru.fireworktax.files.Customconfig;
+import dev.nikomaru.fireworktax.tax.BoostCheck;
 import org.bukkit.plugin.java.JavaPlugin;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.plugin.RegisteredServiceProvider;

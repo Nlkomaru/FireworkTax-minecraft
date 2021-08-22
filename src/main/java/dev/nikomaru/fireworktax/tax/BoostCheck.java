@@ -1,21 +1,18 @@
-package com.github.nlkomaru.fireworktax.tax;
+package dev.nikomaru.fireworktax.tax;
 
 
-import com.github.nlkomaru.fireworktax.FireworkTax;
+import dev.nikomaru.fireworktax.FireworkTax;
 
-import com.github.nlkomaru.fireworktax.files.Customconfig;
+import dev.nikomaru.fireworktax.files.Customconfig;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.economy.EconomyResponse;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
 
 import java.util.HashMap;
 import java.util.UUID;

@@ -1,4 +1,4 @@
-package com.github.nlkomaru.fireworktax.files;
+package dev.nikomaru.fireworktax.files;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
