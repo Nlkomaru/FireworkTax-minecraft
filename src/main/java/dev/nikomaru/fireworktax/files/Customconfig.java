@@ -11,17 +11,14 @@ public class Customconfig {
 
     private static File file;
     private static FileConfiguration customFile;
-    private static float Firework;
-    private static int Count;
-
 
     public static void setup() {
         file = new File(Bukkit.getServer().getPluginManager().getPlugin("FireworkTax").getDataFolder(), "config.yml");
         if (!file.exists()) {
             try {
-                file.createNewFile();
+                file.createNewFile ();
             } catch (IOException e) {
-                //temp
+                e.printStackTrace ();
             }
         }
         customFile = YamlConfiguration.loadConfiguration(file);
@@ -42,12 +39,10 @@ public class Customconfig {
     }
 
     public static int getCount() {
-        Count = Customconfig.get().getInt("MessageCounter");
-        return Count;
+        return Customconfig.get ().getInt ("MessageCounter");
     }
 
     public static float getFirework() {
-        Firework = (float) get().getDouble("Firework");
-        return Firework;
+        return (float) get ().getDouble ("Firework");
     }
 }

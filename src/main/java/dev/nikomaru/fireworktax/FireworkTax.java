@@ -1,6 +1,7 @@
 package dev.nikomaru.fireworktax;
 
 
+import dev.nikomaru.fireworktax.API.VaultAPI;
 import dev.nikomaru.fireworktax.files.Customconfig;
 import dev.nikomaru.fireworktax.tax.BoostCheck;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -10,7 +11,7 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 
 public final class FireworkTax extends JavaPlugin {
 
-    private static Economy econ = null;
+
 
 
     @Override
@@ -23,31 +24,12 @@ public final class FireworkTax extends JavaPlugin {
         Customconfig.save();
 
 
-        if (!setupEconomy()) {
+        if (!VaultAPI.setupEconomy()) {
             System.out.println("No economy plugin found. Disabling Vault");
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
         getServer().getPluginManager().registerEvents(new BoostCheck(), this);
     }
-
-    private boolean setupEconomy() {
-        if (getServer().getPluginManager().getPlugin("Vault") == null) {
-            return false;
-        }
-        RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
-        if (rsp == null) {
-            return false;
-        }
-        econ = rsp.getProvider();
-        return econ != null;
-
-    }
-
-
-    public static Economy getEconomy() {
-        return econ;
-    }
-
 
 }
