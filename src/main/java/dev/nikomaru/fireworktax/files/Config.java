@@ -6,7 +6,7 @@ import org.bukkit.plugin.Plugin;
 public class Config {
     private final Plugin plugin;
     private FileConfiguration config = null;
-    private static int fireworkTax;
+    private static float fireworkTax;
     private static int messageCounter;
 
     public Config (Plugin plugin) {
@@ -20,14 +20,15 @@ public class Config {
             plugin.reloadConfig ();
         }
         config = plugin.getConfig ();
-        if (!config.isInt ("Firework") || config.getDouble ("Firework") < 0) {
 
-            config.set ("Firework",10);
+        if (!config.isDouble ("Firework") || config.getDouble ("Firework") < 0) {
+            config.set ("Firework",10.0D);
         }
         if (!config.isInt ("MessageCounter")) {
             config.set ("MessageCounter",0);
         }
-        fireworkTax = config.getInt ("Firework");
+        fireworkTax = (float) config.getDouble ("Firework");
+
         messageCounter = config.getInt ("MessageCounter");
     }
 
@@ -35,7 +36,7 @@ public class Config {
         return messageCounter;
     }
 
-    public static int getFirework () {
+    public static float getFirework () {
         return fireworkTax;
     }
 }
